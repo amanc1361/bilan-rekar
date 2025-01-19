@@ -11,4 +11,5 @@ type UserRepository interface {
 	GetUserByEmail(email string) (*models.User, error)
 	GetUserByUsername(username string) (*models.User, error)
 	GetUserByEmailAndPassword(email, password string) (*models.User, error)
+	GetUserByMobile(mobile string) (*models.User, error)
 }
