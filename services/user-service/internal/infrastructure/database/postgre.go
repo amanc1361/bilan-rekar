@@ -2,14 +2,13 @@ package database
 
 import (
 	"fmt"
-	"log"
 
 	"github.com/bilan-rekar/services/user-service/internal/domain/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
-type Config struct {
+type DatabaseConfig struct {
 	Host     string
 	Port     string
 	User     string
@@ -17,7 +16,8 @@ type Config struct {
 	DBName   string
 }
 
-func ConnectPostgres(config Config) (*gorm.DB, error) {
+// ConnectPostgres initializes a connection to the PostgreSQL database
+func ConnectPostgres(config DatabaseConfig) (*gorm.DB, error) {
 	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
 		config.Host, config.Port, config.User, config.Password, config.DBName)
 
@@ -28,7 +28,7 @@ func ConnectPostgres(config Config) (*gorm.DB, error) {
 
 	// Run migrations
 	if err := db.AutoMigrate(&models.User{}); err != nil {
-		log.Fatalf("Error migrating database: %v", err)
+		return nil, err
 	}
 
 	return db, nil
