@@ -3,13 +3,14 @@ package main
 import (
 	"log"
 
-	"github.com/bilan-rekar/services/user-service/config"
-	"github.com/bilan-rekar/services/user-service/internal/infrastructure/database"
-	"github.com/bilan-rekar/services/user-service/internal/infrastructure/http"
+	"github.com/amanc1361/bilan-rekar/user-service/config"
+	"github.com/amanc1361/bilan-rekar/user-service/internal/infrastructure/database"
+	"github.com/amanc1361/bilan-rekar/user-service/internal/infrastructure/http"
 )
 
 func main() {
 	// Load environment configuration
+
 	envConfig, err := config.LoadEnv()
 	if err != nil {
 		log.Fatalf("Failed to load environment variables: %v", err)

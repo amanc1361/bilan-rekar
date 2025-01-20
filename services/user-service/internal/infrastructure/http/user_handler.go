@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/bilan-rekar/services/user-service/application"
-	"github.com/bilan-rekar/services/user-service/internal/domain/models"
+	"github.com/amanc1361/bilan-rekar/user-service/application"
+	"github.com/amanc1361/bilan-rekar/user-service/internal/domain/models"
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,6 +16,21 @@ type UserHandler struct {
 func NewUserHandler(service *application.UserService) *UserHandler {
 	return &UserHandler{userService: service}
 }
+
+// @title User Service API
+// @version 1.0
+// @description This is a sample user service API.
+// @host localhost:8001
+// @BasePath /api/v1
+
+// UserRoutes defines the routes of the User module
+// @Summary Get all users
+// @Description Retrieve a list of all users
+// @Tags Users
+// @Produce json
+// @Success 200 {array} models.User
+// @Failure 500 {object} gin.H
+// @Router /users [get]
 
 func (h *UserHandler) GetUsers(c *gin.Context) {
 	users, err := h.userService.GetUsers()

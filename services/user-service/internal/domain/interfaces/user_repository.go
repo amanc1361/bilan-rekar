@@ -1,6 +1,6 @@
 package interfaces
 
-import "github.com/bilan-rekar/services/user-service/internal/domain/models"
+import "github.com/amanc1361/bilan-rekar/user-service/internal/domain/models"
 
 type UserRepository interface {
 	GetAllUsers() ([]models.User, error)

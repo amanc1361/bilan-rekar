@@ -1,8 +1,8 @@
 package application
 
 import (
-	"github.com/bilan-rekar/services/user-service/internal/domain/interfaces"
-	"github.com/bilan-rekar/services/user-service/internal/domain/models"
+	"github.com/amanc1361/bilan-rekar/user-service/internal/domain/interfaces"
+	"github.com/amanc1361/bilan-rekar/user-service/internal/domain/models"
 )
 
 type UserService struct {

@@ -3,7 +3,7 @@ package database
 import (
 	"fmt"
 
-	"github.com/bilan-rekar/services/user-service/internal/domain/models"
+	"github.com/amanc1361/bilan-rekar/user-service/internal/domain/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )

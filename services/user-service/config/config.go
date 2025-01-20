@@ -1,9 +1,8 @@
 package config
 
 import (
+	"fmt"
 	"os"
-
-	"github.com/joho/godotenv"
 )
 
 type DatabaseConfig struct {
@@ -21,10 +20,17 @@ type EnvConfig struct {
 
 // LoadEnv reads environment variables from .env file
 func LoadEnv() (*EnvConfig, error) {
-	if err := godotenv.Load("config/.env"); err != nil {
-		return nil, err
-	}
+	// envFile := os.Getenv("ENV_FILE")
+	// if envFile == "" {
+	// 	envFile = ".env" // مقدار پیش‌فرض
+	// }
 
+	// // بارگیری فایل .env
+	// err := godotenv.Load(envFile)
+	// if err != nil {
+	// 	log.Fatalf("Error loading %s file: %v", envFile, err)
+	// }
+	fmt.Println(os.Getenv("DB_HOST"))
 	return &EnvConfig{
 		AppPort: os.Getenv("APP_PORT"),
 		Database: DatabaseConfig{
@@ -35,4 +41,5 @@ func LoadEnv() (*EnvConfig, error) {
 			DBName:   os.Getenv("DB_NAME"),
 		},
 	}, nil
+
 }

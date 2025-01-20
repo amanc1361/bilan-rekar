@@ -3,8 +3,8 @@ package http
 import (
 	"log"
 
-	"github.com/bilan-rekar/services/user-service/application"
-	"github.com/bilan-rekar/services/user-service/internal/infrastructure/repository"
+	"github.com/amanc1361/bilan-rekar/user-service/application"
+	"github.com/amanc1361/bilan-rekar/user-service/internal/infrastructure/repository"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 
