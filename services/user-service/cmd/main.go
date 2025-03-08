@@ -25,6 +25,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("Failed to get database connection: %v", err)
 	}
+
 	defer sqlDB.Close()
 
 	// Initialize and start the HTTP server

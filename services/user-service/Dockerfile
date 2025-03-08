@@ -14,7 +14,7 @@ COPY . .
 
 
 # RUN swag init --dir ./internal --output ./docs
-RUN ls -la /app/internal
+
 
 RUN swag init --dir ./internal --output ./docs
 

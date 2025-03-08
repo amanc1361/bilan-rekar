@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = ".;user";
+
+// تعریف سرویس UserService
+service UserService {
+  rpc GetUser (UserRequest) returns (UserResponse);
+}
+
+// تعریف پیام UserRequest
+message UserRequest {
+  string user_id = 1;
+}
+
+// تعریف پیام UserResponse
+message UserResponse {
+  uint64 id = 1;
+  google.protobuf.Timestamp created_at = 2;
+  google.protobuf.Timestamp updated_at = 3;
+  google.protobuf.Timestamp deleted_at = 4;
+  string name = 5;
+  string family = 6;
+  string mobile = 7;
+  string email = 8;
+  string username = 9;
+  string password = 10;
+  uint32 role_id = 11;
+
+}

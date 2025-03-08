@@ -1,7 +1,6 @@
 package config
 
 import (
-	"fmt"
 	"os"
 )
 
@@ -20,17 +19,7 @@ type EnvConfig struct {
 
 // LoadEnv reads environment variables from .env file
 func LoadEnv() (*EnvConfig, error) {
-	// envFile := os.Getenv("ENV_FILE")
-	// if envFile == "" {
-	// 	envFile = ".env" // مقدار پیش‌فرض
-	// }
 
-	// // بارگیری فایل .env
-	// err := godotenv.Load(envFile)
-	// if err != nil {
-	// 	log.Fatalf("Error loading %s file: %v", envFile, err)
-	// }
-	fmt.Println(os.Getenv("DB_HOST"))
 	return &EnvConfig{
 		AppPort: os.Getenv("APP_PORT"),
 		Database: DatabaseConfig{
